@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://w3.org" xmlns:xsi="http://w3.org-instance" revision="1.0" schemaVersion="1.0" xmlns="http://microsoft.com">
+  <displayName>PowerShell Classification Banner</displayName>
+  <description>Configuration for the PowerShell Classification Banner</description>
+  <resources>
+    <stringTable>
+      <string id="PCB_Category">PowerShell Classification Banner</string>
+      <string id="Classification_Policy">Classification Settings</string>
+      <string id="Unclassified">UNCLASSIFIED</string>
+      <string id="CUI">CUI</string>
+      <string id="Confidential">CONFIDENTIAL</string>
+      <string id="Secret">SECRET</string>
+      <string id="TopSecret">TOP SECRET</string>
+      <string id="TopSecretSCI">TOP SECRET/SCI</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="Classification_Presentation">
+        <dropdownList refId="Classification_Dropdown" noSort="true" defaultItem="0">Select Classification Level:</dropdownList>
+        <comboBox refId="Font_Selection">
+          <label>Banner Font Face:</label>
+          <default>Consolas</default>
+          <suggestion>Consolas</suggestion>
+          <suggestion>Lucida Console</suggestion>
+          <suggestion>Courier New</suggestion>
+          <suggestion>Segoe UI</suggestion>
+        </comboBox>
+        <decimalTextBox refId="FontSize_Value" spin="true" defaultValue="12">Font Size (pt):</decimalTextBox>
+        <decimalTextBox refId="BarHeight_Value" spin="true" defaultValue="20">Banner Bar Height (px):</decimalTextBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://w3.org" xmlns:xsi="http://w3.org-instance" revision="1.0" schemaVersion="1.0" xmlns="http://microsoft.com">
+  <policyNamespaces>
+    <target prefix="PCB" namespace="PCB.Policies" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="PCB_Category" displayName="$(string.PCB_Category)" />
+  </categories>
+  <policies>
+    <policy name="Classification_Policy" class="Machine" displayName="$(string.Classification_Policy)" presentation="$(presentation.Classification_Presentation)" key="Software\PowerShell Classification Banner">
+      <parentCategory ref="PCB_Category" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="Classification_Dropdown" valueName="Classification">
+          <item displayName="$(string.Unclassified)"><value><string>UNCLASSIFIED</string></value></item>
+          <item displayName="$(string.CUI)"><value><string>CUI</string></value></item>
+          <item displayName="$(string.Confidential)"><value><string>CONFIDENTIAL</string></value></item>
+          <item displayName="$(string.Secret)"><value><string>SECRET</string></value></item>
+          <item displayName="$(string.TopSecret)"><value><string>TOP SECRET</string></value></item>
+          <item displayName="$(string.TopSecretSCI)"><value><string>TOP SECRET/SCI</string></value></item>
+        </enum>
+        <text id="Font_Selection" valueName="Font" required="true" />
+        <decimal id="FontSize_Value" valueName="FontSize" minValue="8" maxValue="72" defaultValue="12" />
+        <decimal id="BarHeight_Value" valueName="BarHeight" minValue="10" maxValue="100" defaultValue="20" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>
