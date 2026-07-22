@@ -1,7 +1,7 @@
 # PowerShellClassificationBanner
 Classification Banner for Windows written in PowerShell
 
-# An NSIS install package is comming but in the interim perform the following manually
+# An NSIS install package is coming but in the interim perform the following manually
 
 Create Program Files folder
 C:\Program Files\PowerShell Classification Banner
