@@ -76,7 +76,11 @@ $dropDown.Size = New-Object System.Drawing.Size(180, 25)
 $dropDown.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
 $items = @("UNCLASSIFIED", "CUI", "CONFIDENTIAL", "SECRET", "TOP SECRET", "TOP SECRET/SCI")
 $dropDown.Items.AddRange($items)
-$dropDown.SelectedItem = if ($regValues.Classification -and $items -contains $regValues.Classification) { $regValues.Classification } else { "UNCLASSIFIED" }
+if ($regValues.Classification -and ($items -contains $regValues.Classification)) { 
+    $dropDown.SelectedItem = $regValues.Classification 
+} else { 
+    $dropDown.SelectedItem = "UNCLASSIFIED" 
+}
 $form.Controls.Add($dropDown)
 
 $label4 = New-Object System.Windows.Forms.Label
